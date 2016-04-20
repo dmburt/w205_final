@@ -5,11 +5,13 @@ nocolor='\033[0m'
 
 ### ..::: Get data from Internet sources
 
-cd /data
-mkdir final
-mkdir final/data
-cd final/data
+#cd /data
+#mkdir final
+#mkdir final/data
+#cd final/data
 
+mkdir data
+cd data
 
 ## ...::: Prescription data
 #         Medicare Provider Utilization and Payment Data: Part D Prescriber

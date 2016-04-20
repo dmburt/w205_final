@@ -26,3 +26,9 @@ swapon /swapfile
 # wait && ./setup_ucb_complete_plus_postgres.sh /dev/xvdf
 mount -t ext4 /dev/xvdf /data
 
+##
+# Install Python package for ETL
+pip install petl
+
+
+
