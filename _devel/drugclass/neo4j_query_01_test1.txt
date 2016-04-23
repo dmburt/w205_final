@@ -1,0 +1,6 @@
+MATCH (dru:Drug { name: 'OXYCODONE HCL' })-
+[:PRESCRIBED_FOR*2..2]-(rx_class)
+WHERE NOT (dru)-[:PRESCRIBED_FOR]-(rx_class)
+AND rx_class.name <> 'OXYCODONE HCL'
+RETURN rx_class.name, COUNT(*)
+ORDER BY COUNT(*) DESC , rx_class.name

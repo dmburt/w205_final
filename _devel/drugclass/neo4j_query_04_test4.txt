@@ -1,0 +1,5 @@
+MATCH p=(:Drug {name: 'OXYCODONE HCL'})-
+[:PRESCRIBED_FOR*0..2]-(:Drug {name: 'BUPRENORPHINE HCL'})
+RETURN p, length(p)
+ORDER BY length(p)
+LIMIT 10
