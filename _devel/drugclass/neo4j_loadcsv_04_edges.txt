@@ -1,0 +1,5 @@
+LOAD CSV FROM
+"https://raw.githubusercontent.com/dmburt/w205/master/test/neo4j/csv/drug_edges_clean.csv" AS line
+MATCH (dru:Drug {name:line[0]})
+MATCH (dis:Disease {name:line[1]})
+CREATE UNIQUE (dru) -[:PRESCRIBED_FOR]-> (dis)

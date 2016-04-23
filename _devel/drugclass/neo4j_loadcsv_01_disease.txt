@@ -1,0 +1,4 @@
+USING PERIODIC COMMIT 10000
+LOAD CSV FROM
+"https://raw.githubusercontent.com/dmburt/w205/master/test/neo4j/csv/disease_nodes_clean.csv" AS line
+MERGE (:Disease {name:line[0]})

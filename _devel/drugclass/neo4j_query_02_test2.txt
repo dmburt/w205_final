@@ -1,0 +1,4 @@
+MATCH p=(dru:Drug {name: 'DIMETHYL FUMARATE'})-
+[:PRESCRIBED_FOR*0..2]-(doom:Drug {name: 'MINOXIDIL'})
+RETURN p, length(p)
+ORDER BY length(p)
