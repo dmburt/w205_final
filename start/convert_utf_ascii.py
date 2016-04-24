@@ -7,11 +7,19 @@ filename, fileext = os.path.splitext(filepath)
 
 def utf_to_ascii():
 
-    thisfile = open(filepath, "rb")
-    filedata = thisfile.read().decode("utf-8")
-    outdata  = filedata.encode("ascii", "ignore")
-    outfile  = open(filename + '_ascii' + fileext, "wb")
+    firstrec = True
 
-    outfile.write(outdata)
+    with open(filename + '_ascii' + fileext, 'a') as fileout:
+
+        with open(filepath, "rb") as filein:
+            for line in filein:
+                if firstrec != False:
+                    next(filein)
+                    firstrec = False
+
+                    filedata = line.decode("utf-8")
+                    outdata  = filedata.encode("ascii", "ignore")
+                    fileout.writelines(outdata)
+
 
 utf_to_ascii()
