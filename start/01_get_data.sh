@@ -27,7 +27,7 @@ wait && unzip PartD_Prescriber_PUF_NPI_DRUG_13.zip
 #         Source: Centers for Medicare and Medicaid Services
 
 printf "\n${green}Getting: Medicare Prescriber National Summary Table\nExpected size: < 1 MB (zipped), < 1 MB (unzipped)${nocolor\n"
-wait && wget "http://download.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/PartD_Prescriber_PUF_Drug_Ntl_13.zip
+wait && wget "http://download.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/PartD_Prescriber_PUF_Drug_Ntl_13.zip"
 
 
 
