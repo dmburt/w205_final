@@ -21,8 +21,8 @@ Unfortunately, a fair number of rows in the prescription data set have no benefi
   - This is the methodology we have chosen.  CMS provided a national-level prescribing summary that we can use to impute missing values.  If we calculate a national average claims-per-beneficiary number for a particular drug, then it isn't unreasonable to assume--in the absence of other information--that any particular physician with a missing number of beneficiaries may have a similar number of claims per beneficiary.  And because we have a number of claims for the provider with a `NULL` beneficiary count, we can use the national average claims/bene and the number of claims prescribed by a physician to estimate the number of beneficiaries she may have prescribed a particular drug to.
 
 SAMPLE BEFORE IMPUTATION
-image here
+![Sample of rows with missing values before imputation](https://raw.githubusercontent.com/dmburt/w205_final/master/documentation/images/Impute%20Missing%20Values%20-%20Step%201.png)
 
 SAMPLE AFTER IMPUTATION
-image here
+![Sample of rows with missing values before imputation](https://raw.githubusercontent.com/dmburt/w205_final/master/documentation/images/Impute%20Missing%20Values%20-%20Step%202.png)
 
