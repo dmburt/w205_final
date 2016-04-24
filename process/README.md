@@ -11,7 +11,7 @@ These will be used to provide some normalization to this provider-aggregated dat
 
 #### 05_impute_missing_values.sh
 Unfortunately, a fair number of rows in the prescription data set have no beneficiary count.  The original data set from CMS contained asterisks in those fields, which we removed during ETL (leaving `NULL` values after the load to Postgres), and represent a number below CMS' privacy-related lower bound for data dissemination.  However, this information is important, especially as we will need to aggregate the data in the prescription table to a provider specialty level.  We have missing values, but which methodology for handling them would be appropriate?
-* Set to zero
+* *Set to zero*
   - There are several issues with this, including division by zero errors when calculating X-per-beneficiary, as well as understating the impact of these prescriptions in the specialty-level aggregation.
 * Leave as null
   - This will leave null X-per-beneficary values, which will lead to dropped rows in later steps when we try to discover unusual prescribing.
