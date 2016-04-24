@@ -1,7 +1,7 @@
 CREATE TABLE providers (
     npi             varchar(10),
     taxonomycode    varchar(10),
-    zipcode         varchar(10)
+    zipcode         varchar(20)
 );
 
 CREATE TABLE prescriptions (
