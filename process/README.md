@@ -26,3 +26,6 @@ SAMPLE BEFORE IMPUTATION (Claims per Beneficiary is from national average)
 SAMPLE AFTER IMPUTATION
 ![Sample of rows with missing values before imputation](https://raw.githubusercontent.com/dmburt/w205_final/master/documentation/images/Impute%20Missing%20Values%20-%20Step%202.png)
 
+#### 06_specialty_drug.sh
+Creates an aggregation table, specialty_drug_agg, which serve as the basis for setting upper-bound thresholds in our analysis.
+
