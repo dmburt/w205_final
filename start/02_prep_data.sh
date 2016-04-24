@@ -11,7 +11,8 @@ cp /data/final/data/PartD_Prescriber_PUF_Drug_Ntl_13.csv /data/final/data/import
 
 # Provider file is encoded in UTF-8, but petl library expects ASCII.
 # This utility will do the conversion, creating a new copy with "_ascii" in the file name.
-wait && python convert_utf_ascii.py /data/final/data/provider-mini.csv
+wait && python convert_utf_ascii.py /data/final/data/import/provider-mini.csv
+wait && python convert_utf_ascii.py /data/final/data/import/provider-import.csv
 
 wait && python apd_etl.py
 
