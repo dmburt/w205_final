@@ -44,6 +44,6 @@ COPY prescriptions
     daysupply,
     drugcost
 )
-FROM '/data/final/data/prescription-import.csv' DELIMITER ',' CSV HEADER;
+FROM '/data/final/data/import/prescription-import.csv' DELIMITER ',' CSV HEADER;
 
 
