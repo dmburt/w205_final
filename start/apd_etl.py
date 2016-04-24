@@ -1,11 +1,13 @@
 import petl as etl
 
+
 provider_data_file = "/data/final/data/import/provider-mini.csv"
 provider_import_file = "/data/final/data/import/provider-import.csv"
 
 pres_data_file = "/data/final/data/import/prescription-mini.tab"
 pres_data_file_csv = "/data/final/data/import/prescription-mini.csv"
 pres_import_file = "/data/final/data/import/prescription-import.csv"
+
 
 ##Process provider data file
 #Load the table
@@ -16,6 +18,7 @@ table2 = etl.cut(table1, 'NPI','Healthcare Provider Taxonomy Code_1','Provider B
 
 # Save to import file
 etl.tocsv(table2, provider_import_file)
+
 
 ##Process prescription data file
 #Load tab file and save as csv first
@@ -32,4 +35,13 @@ extracted = etl.cut(table_csv,'NPI','NPPES_PROVIDER_LAST_ORG_NAME','NPPES_PROVID
 etl.tocsv(extracted,pres_import_file)
 
 
+##Process prescription national data file
+#Load the table
+table3 = etl.fromcsv(pres_natl_file)
+
+# Select the columns
+table4 = etl.cut(table3, 'drug_name','bene_count','prescriber_count','total_claim_count','total_drug_cost')
+
+# Save to import file
+etl.tocsv(table4, pres_natl_import_file)
 
