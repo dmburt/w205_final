@@ -41,6 +41,8 @@ table3 = etl.fromcsv(pres_natl_file)
 
 # Select the columns
 table4 = etl.cut(table3, 'drug_name','bene_count','prescriber_count','total_claim_count','total_drug_cost')
+table4 = etl.convert(table4, ('bene_count','prescriber_count','total_claim_count','total_drug_cost'), lambda n: int(float(n)))
+
 
 # Save to import file
 etl.tocsv(table4, pres_natl_import_file)
