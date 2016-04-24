@@ -33,10 +33,9 @@ CREATE TABLE prescriptions_natl (
     drugcost            bigint,
     claimsperbene       real DEFAULT 0.0,
     costperbene         real DEFAULT 0.0,
-    daysperclaim        real DEFAULT 0.0,
-    daysperclaimperbene real DEFAULT 0.0
+    sd_claimsperbene    real DEFAULT 0.0,
+    sd_costperbene      real DEFAULT 0.0
 );
-
 
 COPY providers FROM '/data/final/data/import/provider-import.csv' DELIMITER ',' CSV HEADER;
 
