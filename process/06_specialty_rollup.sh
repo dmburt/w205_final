@@ -8,3 +8,13 @@ psql -h localhost -U postgres -d apd -c "UPDATE specialty_drug_agg SET claimsper
 
 psql -h localhost -U postgres -d apd -c "CREATE index pk_specialty_drug_agg ON specialty_drug_agg (specialty, drugname, genericname);"
 
+
+## Add thresholds
+
+psql -h localhost -U postgres -d apd -c "ALTER TABLE specialty_drug_agg ADD COLUMN thresh_claimsperbene real DEFAULT 0.0;"
+psql -h localhost -U postgres -d apd -c "ALTER TABLE specialty_drug_agg ADD COLUMN thresh_costperbene real DEFAULT 0.0;"
+psql -h localhost -U postgres -d apd -c "ALTER TABLE specialty_drug_agg ADD COLUMN thresh_daysperclaim real DEFAULT 0.0;"
+
+psql -h localhost -U postgres -d apd -c "UPDATE specialty_drug_agg SET thresh_claimsperbene = claimsperbene + sd_claimsperbene * 2;"
+psql -h localhost -U postgres -d apd -c "UPDATE specialty_drug_agg SET thresh_costperbene = costperbene + sd_costperbene * 2;"
+psql -h localhost -U postgres -d apd -c "UPDATE specialty_drug_agg SET thresh_daysperclaim = daysperclaim + sd_daysperclaim * 2;"
