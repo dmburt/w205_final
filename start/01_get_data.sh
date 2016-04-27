@@ -5,13 +5,14 @@ nocolor='\033[0m'
 
 ### ..::: Get data from Internet sources
 
-#cd /data
-#mkdir final
-#mkdir final/data
-#cd final/data
+cd /data
+rm -rf final
+mkdir final
+mkdir final/data
+cd final/data
 
-mkdir data
-cd data
+#mkdir data
+#cd data
 
 ## ...::: Prescriber-level prescription data
 #         Medicare Provider Utilization and Payment Data: Part D Prescriber
@@ -26,9 +27,9 @@ wait && unzip PartD_Prescriber_PUF_NPI_DRUG_13.zip
 #         Medicare Prescriber National Summary Table
 #         Source: Centers for Medicare and Medicaid Services
 
-printf "\n${green}Getting: Medicare Prescriber National Summary Table\nExpected size: < 1 MB (zipped), < 1 MB (unzipped)${nocolor\n"
+printf "\n${green}Getting: Medicare Prescriber National Summary Table\nExpected size: < 1 MB (zipped), < 1 MB (unzipped)${nocolor}\n"
 wait && wget "http://download.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/PartD_Prescriber_PUF_Drug_Ntl_13.zip"
-
+wait &&  unzip PartD_Prescriber_PUF_Drug_Ntl_13.zip
 
 
 ## ...::: Provider information

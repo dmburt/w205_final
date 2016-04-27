@@ -30,5 +30,6 @@ mount -t ext4 /dev/xvdf /data
 # Install Python package for ETL
 pip install petl
 
-
+# Install Python package to load Excel
+pip install xlrd
 
