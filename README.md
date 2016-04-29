@@ -4,7 +4,7 @@
 
 ### Description of the project
 
-_PROBLEM_
+__PROBLEM__
 
 * Prescription drugs accounted for about 9 percent
 of national health expenditure in the U.S. in 2013.
@@ -20,7 +20,7 @@ are finding unexpected prescribing patterns among
 physicians, based on prescriptions and costs per
 person.
 
-_SOLUTION_
+__SOLUTION__
 
 * CMS has recently changed its position for release
 of physician-level prescribing data for public use.
@@ -30,7 +30,7 @@ are finding unexpected prescribing patterns among
 physicians, based on prescriptions and costs per
 person.
 
-_DATA SETS_
+__DATA SETS__
 
 * CMS Part D Prescriber PUF, 2013
   - Prescriptions, units, days supply, and costs by physician and drug
@@ -42,7 +42,7 @@ _DATA SETS_
   - Office location and specialty (credential) by physician
   - 5.7GB; 4.8M lines
 
-_ETL / CLEANUP
+__ETL / CLEANUP__
 
 * CMS Part D Prescriber PUF, 2013
   - Missing values: requires imputation
@@ -52,7 +52,7 @@ _ETL / CLEANUP
 * National Plan and Provider Enumeration System (NPPES)
   - Over 200 fields: requires extraction of key attributes
 
-_ROADMAP / FUTURE DEVELOPMENT_
+__ROADMAP / FUTURE DEVELOPMENT__
 
 * Larger data volume and velocity
   - Implement system as a stream reader.
